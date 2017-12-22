@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname,"www")));
 })*/
 /*
 var newStu = {
-    name:"shimh",
+    name:"shimh666",
     pass:111222,
     mytime:new Date()
 }
