@@ -1,0 +1,49 @@
+<div class="container">
+    <h1>home</h1>
+    <h2>{{user}}</h2>
+    <h1 class="btn btn-danger" ui-sref="add">注册</h1>
+    <h1 class="btn btn-danger" ui-sref="login">登录</h1>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <td>姓名</td>
+        <td>密码</td>
+        <td>时间</td>
+        <td>操作</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="s in students">
+            <td>{{s.name}}</td>
+            <td>{{s.pass}}</td>
+            <td>{{s.mytime}}</td>
+            <td>
+                <a ui-sref="info({name:s.name})">详情</a>
+                <a ui-sref="delOne({name:s.name})" style="margin-left: 10px;">删除</a>
+            </td>
+        </tr>
+        <tr ng-if="students.length != 0">
+            <td colspan="4" class="text-center">
+                <a href="" ui-sref="delAll" class="btn btn-primary">删除全部</a>
+            </td>
+        </tr>
+        <tr ng-if="students.length == 0">
+            <td colspan="4" class="text-center">
+                <p>暂无数据......</p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+    <ul class="pagination">
+        <li>
+            <a href="javascript:;" ng-click="p_first()">首页</a>
+        </li>
+        <li ng-repeat="p in pages">
+            <a href="javascript:;" ng-click="load_page(p)"></a>
+        </li>
+        <li>
+            <a href="javascript:;" ng-click="p_last()">末页</a>
+        </li>
+    </ul>
+</div>
